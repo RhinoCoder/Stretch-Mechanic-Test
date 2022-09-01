@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
             if (canSpawn)
             {
                 StartCoroutine(SpawnTails());
+                firstObj.GetComponent<MeshRenderer>().enabled = false;
             }
         }
 
@@ -77,6 +78,8 @@ public class Player : MonoBehaviour
             startPoint = transform.position;
             SpawnedTailsDestroyer();
             StopAllCoroutines();
+
+            firstObj.GetComponent<MeshRenderer>().enabled = true;
         }
     }
 
@@ -126,7 +129,9 @@ public class Player : MonoBehaviour
         }
         else
         {
+           
             transform.position = startPoint;
+            firstObj.transform.position = transform.position - (transform.forward);
         }
     }
 

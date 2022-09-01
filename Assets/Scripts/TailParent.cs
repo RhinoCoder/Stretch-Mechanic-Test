@@ -36,7 +36,7 @@ public class TailParent : MonoBehaviour
             return;
         }
 
-        transform.position = player.transform.position + (-player.transform.forward * 2f);
+        transform.position = player.transform.position - ( player.transform.forward);
 
     }
 }
